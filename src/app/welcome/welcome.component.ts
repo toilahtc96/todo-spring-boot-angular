@@ -39,4 +39,11 @@ export class WelcomeComponent implements OnInit {
   handleErrorResponse(err) {
     this.welcomeMessageFromService = err.error.message
   }
+
+  getWelcomeMessageWithParam() {
+    this.welcomeDataService.excuteHelloWorldBeanServiceWithParam(this.username).subscribe(
+      response => this.handleSuccessfulResponse(response),
+      error => this.handleErrorResponse(error)
+    )
+  }
 }

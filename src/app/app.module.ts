@@ -12,7 +12,7 @@ import { MenuComponent } from './menu/menu.component';
 import { FooterComponent } from './footer/footer.component';
 import { LogoutComponent } from './logout/logout.component';
 import { HttpClientModule } from '@angular/common/http';
-
+import { ChangeStatusPipe } from './pipe/change-status.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +22,8 @@ import { HttpClientModule } from '@angular/common/http';
     ListTodosComponent,
     MenuComponent,
     FooterComponent,
-    LogoutComponent
+    LogoutComponent,
+    ChangeStatusPipe
   ],
   imports: [
     BrowserModule,

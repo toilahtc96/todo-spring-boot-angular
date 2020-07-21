@@ -3,7 +3,8 @@ welcome works! {{username}} You can manage your todos <a routerLink="/todos">her
 
 <div class="container">
     Click to get welcome message from Server!
-    <button (click)="getWelcomeMessage()" class="btn btn-success">Get Message</button>
+    <!-- <button (click)="getWelcomeMessage()" class="btn btn-success">Get Message</button> -->
+    <button (click)="getWelcomeMessageWithParam()" class="btn btn-success">Get Message</button>
 </div>
 
 <div class="container" *ngIf="welcomeMessageFromService">
