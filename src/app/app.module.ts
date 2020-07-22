@@ -13,6 +13,7 @@ import { FooterComponent } from './footer/footer.component';
 import { LogoutComponent } from './logout/logout.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ChangeStatusPipe } from './pipe/change-status.pipe';
+import { TodoComponent } from './todo/todo.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +24,8 @@ import { ChangeStatusPipe } from './pipe/change-status.pipe';
     MenuComponent,
     FooterComponent,
     LogoutComponent,
-    ChangeStatusPipe
+    ChangeStatusPipe,
+    TodoComponent
   ],
   imports: [
     BrowserModule,

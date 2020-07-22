@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TodoDataService } from '../service/data/todo/todo-data.service';
+import { Router } from '@angular/router';
 
 export class Todo {
   constructor(public id: number,
@@ -26,8 +27,9 @@ export class ListTodosComponent implements OnInit {
   //   id: 1,
   //   description: 'lear spring boot'
   // }
-  todo: Todo
-  constructor(private todoDataService: TodoDataService) { }
+  message: string
+  constructor(private todoDataService: TodoDataService,
+    private route: Router) { }
 
   ngOnInit() {
     this.getAll();
@@ -36,7 +38,7 @@ export class ListTodosComponent implements OnInit {
     if (confirm('Xoa Todo Nay?')) {
       this.todoDataService.deleteTodoById('htc', id).subscribe(
         response => {
-          this.todo = response
+          this.message = `Xoa ${id} Thanh cong!`
           this.getAll()
         },
         error => console.log(error)
@@ -52,4 +54,7 @@ export class ListTodosComponent implements OnInit {
     )
   }
 
+  updateTodo(id) {
+    this.route.navigate([`todos/${id}`])
+  }
 }
