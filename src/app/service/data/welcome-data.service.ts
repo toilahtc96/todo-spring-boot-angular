@@ -11,24 +11,25 @@ export class WelcomeDataService {
 
   constructor(private httpClient: HttpClient) { }
   executeHelloWorldBeanService() {
-    console.log(this.httpClient.get("http://localhost:8080/hello-world-bean/"));
+    // console.log(this.httpClient.get("http://localhost:8080/hello-world-bean/"));
     return this.httpClient.get<HelloWorldBean>("http://localhost:8080/hello-world-bean/")
   }
 
   excuteHelloWorldBeanServiceWithParam(username: string) {
-    let basicAuthHeaderString = this.createBasicAuthenticationHttpHeader();
-    let headers = new HttpHeaders({
-      Authorization: basicAuthHeaderString
-    })
+    // let basicAuthHeaderString = this.createBasicAuthenticationHttpHeader();
+    // let headers = new HttpHeaders({
+    //   Authorization: basicAuthHeaderString
+    // })
     return this.httpClient.get<HelloWorldBean>(`http://localhost:8080/hello-world-bean/${username}`,
-      { headers});
+      // { headers}
+      );
   }
 
-  createBasicAuthenticationHttpHeader() {
-    let username = 'htc'
-    let password = '1'
-    let basicAuthHeaderString = 'Basic ' + window.btoa(username + ':' + password);
+  // createBasicAuthenticationHttpHeader() {
+  //   let username = 'htc'
+  //   let password = '1'
+  //   let basicAuthHeaderString = 'Basic ' + window.btoa(username + ':' + password);
 
-    return basicAuthHeaderString;
-  }
+  //   return basicAuthHeaderString;
+  // }
 }
