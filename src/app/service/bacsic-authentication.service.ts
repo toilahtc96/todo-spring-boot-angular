@@ -5,6 +5,8 @@ import {map} from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
+// export const TOKEN = 
+// export const AUTHENTICATED_USER= 
 export class BasicAuthenticationService {
 
   constructor(private httpClient: HttpClient) { }
