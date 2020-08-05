@@ -15,6 +15,23 @@ export class BasicAuthenticationService {
 
   constructor(private httpClient: HttpClient) { }
 
+
+  executeJwtAuthenticationService(username, password) {
+
+    return this.httpClient.post<any>(`${API_URL}/authenticate`,{
+      username,
+      password
+    }).pipe(
+        map(
+          data => {
+            sessionStorage.setItem(AUTHENTICATEDUSER, username)
+            sessionStorage.setItem(TOKEN, `Bearer ${data.token}`)
+            return data;
+          }
+        )
+      );
+  }
+
   executeBasicAuthenticationService(username, password) {
 
 
